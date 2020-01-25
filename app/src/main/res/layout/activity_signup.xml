@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/username"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.573"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_width="275dp"
         android:layout_height="76dp"
         android:backgroundTint="#FF0000"
@@ -17,41 +15,87 @@
         android:maxLength="20"
         android:textColor="#FF0000"
         android:textColorHint="#FF0000"
-        tools:layout_editor_absoluteX="54dp"
-        tools:layout_editor_absoluteY="294dp"></EditText>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="49dp"></EditText>
 
     <EditText
         android:id="@+id/password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username"
         android:layout_width="275dp"
         android:layout_height="76dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#FF0000"
         android:hint="Password"
-        android:inputType="textPassword"
+        android:inputType="textVisiblePassword"
         android:maxLength="15"
         android:textColor="#FF0000"
         android:textColorHint="#FF0000"
-        tools:layout_editor_absoluteX="81dp"
-        tools:layout_editor_absoluteY="93dp"></EditText>
+        app:layout_constraintEnd_toEndOf="@+id/username"
+        app:layout_constraintStart_toStartOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@+id/username"></EditText>
+
+    <EditText
+        android:id="@+id/passwordConfirm"
+        android:layout_width="275dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#FF0000"
+        android:hint="Confirm Password"
+        android:inputType="textVisiblePassword"
+        android:maxLength="15"
+        android:textColor="#FF0000"
+        android:textColorHint="#FF0000"
+        app:layout_constraintEnd_toEndOf="@+id/password"
+        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/password"></EditText>
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="275dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#FF0000"
+        android:hint="Enter your name"
+        android:inputType="textPersonName"
+        android:maxLength="15"
+        android:textColor="#FF0000"
+        android:textColorHint="#FF0000"
+        app:layout_constraintEnd_toEndOf="@+id/passwordConfirm"
+        app:layout_constraintStart_toStartOf="@+id/passwordConfirm"
+        app:layout_constraintTop_toBottomOf="@+id/passwordConfirm"></EditText>
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/patient"
+        android:layout_width="198dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/shape"
+        android:fontFamily="sans-serif"
+        android:onClick=""
+        android:text="Patient"
+        android:textSize="30sp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password"
-        android:layout_width="240dp"
-        android:layout_height="61dp"
+        app:layout_constraintTop_toBottomOf="@+id/name"></Button>
+
+    <Button
+        android:id="@+id/doctor"
+        android:layout_width="198dp"
+        android:layout_height="50dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
         android:background="@drawable/shape"
         android:fontFamily="sans-serif"
-        android:onClick="login"
-        android:text="login"
+        android:onClick=""
+        android:text="Doctor"
         android:textSize="30sp"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="71dp"
-        tools:layout_editor_absoluteY="507dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/patient"></Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
