@@ -2,15 +2,39 @@ package com.zhua15.schedulecloud;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.VideoView;
 
 public class MainActivity extends Activity {
+
+    VideoView videoView;
+    MediaPlayer mediaPlayer;
+    int currentVideoPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        videoView = findViewById(R.id.videoView);
+        Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.logo);
+        videoView.setVideoURI(uri);
+        videoView.start();
+
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mediaPlayer = mp;
+                mediaPlayer.setLooping(true);
+                if (currentVideoPosition != 0) {
+                    mediaPlayer.seekTo(currentVideoPosition);
+                    mediaPlayer.start();
+                }
+            }
+        });
     }
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
