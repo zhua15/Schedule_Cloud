@@ -9,6 +9,7 @@
         android:id="@+id/username"
         android:layout_width="275dp"
         android:layout_height="76dp"
+        android:layout_marginTop="68dp"
         android:backgroundTint="#FF0000"
         android:hint="Email or username"
         android:inputType="numberDecimal"
@@ -17,7 +18,7 @@
         android:textColorHint="#FF0000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="49dp"></EditText>
+        app:layout_constraintTop_toTopOf="parent"></EditText>
 
     <EditText
         android:id="@+id/password"
@@ -72,7 +73,7 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/shape"
         android:fontFamily="sans-serif"
-        android:onClick=""
+        android:onClick="patient"
         android:text="Patient"
         android:textSize="30sp"
         android:visibility="visible"
@@ -89,7 +90,7 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/shape"
         android:fontFamily="sans-serif"
-        android:onClick=""
+        android:onClick="doctor"
         android:text="Doctor"
         android:textSize="30sp"
         android:visibility="visible"
