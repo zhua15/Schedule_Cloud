@@ -34,7 +34,24 @@ public class patientPop extends Activity {
 
         getWindow().setLayout((int) (0.75 * width), (int) (0.25 * height));
     }
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        hideSystemUI();
+    }
+    private void hideSystemUI() {
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN);
+    }
     public void onConfirm(View view) {
         String docCode = codeView.toString();
+
+        Intent myIntent = new Intent(patientPop.this, LoginActivity.class);
+        startActivity(myIntent);
     }
 }

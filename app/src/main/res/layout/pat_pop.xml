@@ -38,6 +38,7 @@
         android:layout_width="168dp"
         android:layout_height="59dp"
         android:text="Confirm"
+        android:onClick="onConfirm"
         android:textSize="25sp"
         android:background="@drawable/shape"
         app:layout_constraintEnd_toEndOf="parent"

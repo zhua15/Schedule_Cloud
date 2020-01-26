@@ -1,6 +1,7 @@
 package com.zhua15.schedulecloud;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -62,9 +63,7 @@ public class LoginActivity extends Activity {
 
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        if (hasFocus) {
-            hideSystemUI();
-        }
+        hideSystemUI();
     }
     private void hideSystemUI() {
         View decorView = getWindow().getDecorView();
@@ -80,6 +79,7 @@ public class LoginActivity extends Activity {
         String username = usernameBox.toString();
         String password = passwordBox.toString();
 
-
+        Intent myIntent = new Intent(LoginActivity.this, TableActivity.class);
+        startActivity(myIntent);
     }
 }

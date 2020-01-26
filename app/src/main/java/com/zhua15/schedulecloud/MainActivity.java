@@ -57,9 +57,7 @@ public class MainActivity extends Activity {
 
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        if (hasFocus) {
-            hideSystemUI();
-        }
+        hideSystemUI();
     }
     private void hideSystemUI() {
         View decorView = getWindow().getDecorView();
