@@ -44,16 +44,16 @@ public class SignupActivity extends Activity {
     }
     public void patient(View view) {
         Intent intent = new Intent(SignupActivity.this, patientPop.class);
-        intent.putExtra("username", username.getText());
-        intent.putExtra("password", password.getText());
-        intent.putExtra("name", name.getText());
+        intent.putExtra("username", username.getText().toString());
+        intent.putExtra("password", password.getText().toString());
+        intent.putExtra("name", name.getText().toString());
         startActivity(intent);
     }
     public void doctor(View view) {
         Intent intent = new Intent(SignupActivity.this, doctorPop.class);
-        intent.putExtra("username", username.getText());
-        intent.putExtra("password", password.getText());
-        intent.putExtra("name", name.getText());
+        intent.putExtra("username", username.getText().toString());
+        intent.putExtra("password", password.getText().toString());
+        intent.putExtra("name", name.getText().toString());
         startActivity(intent);
     }
 

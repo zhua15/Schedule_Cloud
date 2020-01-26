@@ -2,4 +2,6 @@
 <resources>
     <color name="buttonColour">#FFDE59</color>
     <color name="inputColour">#000000</color>
+    <color name="colour1">#3E0091EA</color>
+    <color name="colour2">#24BDD5</color>
 </resources>

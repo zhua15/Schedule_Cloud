@@ -2,10 +2,16 @@ package com.zhua15.schedulecloud;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.EditText;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.util.ArrayList;
 
 public class patientPop extends Activity {
 
@@ -13,12 +19,14 @@ public class patientPop extends Activity {
     String password;
     String name;
     EditText codeView;
+    ArrayList arrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pat_pop);
 
+        loadData();
         codeView = findViewById(R.id.codeView);
 
         Intent intent = getIntent();
@@ -49,6 +57,27 @@ public class patientPop extends Activity {
                         | View.SYSTEM_UI_FLAG_FULLSCREEN);
     }
     public void onConfirm(View view) {
-        String docCode = codeView.toString();
+        Person person = new Person(username,password,"patient",codeView.toString());
+        arrayList.add(person);
+        saveData();
+        startActivity(new Intent(patientPop.this, LoginActivity.class));
+    }
+    private void saveData() {
+        SharedPreferences sharedPreferences = getSharedPreferences("sp", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(arrayList);
+        editor.putString("people list", json);
+        editor.apply();
+    }
+    private void loadData() {
+        SharedPreferences sharedPreferences = getSharedPreferences("sp", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString("people list", null);
+        java.lang.reflect.Type type = new TypeToken<ArrayList<Person>>() {}.getType();
+        arrayList = gson.fromJson(json, type);
+
+        if (arrayList == null)
+            arrayList = new ArrayList();
     }
 }

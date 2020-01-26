@@ -2,10 +2,16 @@ package com.zhua15.schedulecloud;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.TextView;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.util.ArrayList;
 
 public class doctorPop extends Activity {
 
@@ -13,11 +19,13 @@ public class doctorPop extends Activity {
     String username;
     String password;
     String name;
+    ArrayList arrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.doc_pop);
+        loadData();
 
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
@@ -51,6 +59,27 @@ public class doctorPop extends Activity {
                         | View.SYSTEM_UI_FLAG_FULLSCREEN);
     }
     public void onConfirm(View view) {
+        Person person = new Person(username, password, "doctor", codeView.toString());
+        arrayList.add(person);
+        saveData();
+        startActivity(new Intent(doctorPop.this, LoginActivity.class));
+    }
+    private void saveData() {
+        SharedPreferences sharedPreferences = getSharedPreferences("sp", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(arrayList);
+        editor.putString("people list", json);
+        editor.apply();
+    }
+    private void loadData() {
+        SharedPreferences sharedPreferences = getSharedPreferences("sp", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString("people list", null);
+        java.lang.reflect.Type type = new TypeToken<ArrayList<Person>>() {}.getType();
+        arrayList = gson.fromJson(json, type);
 
+        if (arrayList == null)
+            arrayList = new ArrayList();
     }
 }
