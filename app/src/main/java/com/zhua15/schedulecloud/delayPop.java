@@ -34,4 +34,13 @@ public class delayPop extends Activity {
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN);
     }
+    public void delay30(View view) {
+        finish();
+    }
+    public void delay60(View view) {
+        finish();
+    }
+    public void delay90(View view) {
+        finish();
+    }
 }

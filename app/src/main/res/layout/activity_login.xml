@@ -19,7 +19,7 @@
         android:layout_marginTop="380dp"
         android:backgroundTint="@color/inputColour"
         android:hint="Email or username"
-        android:inputType="numberDecimal"
+        android:inputType="textEmailAddress"
         android:maxLength="20"
         android:textColor="@color/inputColour"
         android:textColorHint="@color/inputColour"
