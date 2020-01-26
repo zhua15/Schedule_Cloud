@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,6 +11,243 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/bg"></ImageView>
+a1
+    <GridLayout
+        android:layout_width="384dp"
+        android:layout_height="500dp"
+        android:columnCount="6"
+        android:rowCount="19"
+        app:layout_constraintBottom_toBottomOf="@+id/bg"
+        app:layout_constraintEnd_toEndOf="@+id/bg"
+        app:layout_constraintStart_toStartOf="@+id/bg"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/empty"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:text=""
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/mon"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:text="Mon"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tue"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="2"
+            android:layout_row="0"
+            android:text="Tue"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/wed"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="3"
+            android:layout_row="0"
+            android:text="Wed"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/thur"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="4"
+            android:layout_row="0"
+            android:text="Thur"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/fri"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="5"
+            android:layout_row="0"
+            android:text="Fri"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/t1"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:text="1:00"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/t1.5"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:text="1:30"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/t2"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:text="2:00"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/t2.5"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="4"
+            android:text="2:30"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/t3"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="5"
+            android:text="3:00"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/t3.5"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="6"
+            android:text="3:30"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/t4"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="7"
+            android:text="4:00"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/t4.5"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="8"
+            android:text="4:30"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/t5"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="9"
+            android:text="5:00"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/t5.5"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="10"
+            android:text="5:30"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/t6"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="11"
+            android:text="6:00"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/t6.5"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="12"
+            android:text="6:30"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/t7"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="13"
+            android:text="7:00"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/t7.5"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="14"
+            android:text="7:30"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/t8"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="15"
+            android:text="8:00"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/t8.5"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="16"
+            android:text="8:30"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/t9"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="17"
+            android:text="9:00"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/t9.5"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="18"
+            android:text="9:30"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/t10"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_column="0"
+            android:layout_row="19"
+            android:text="10:00"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+    </GridLayout>
 
     <Button
         android:id="@+id/delay"
