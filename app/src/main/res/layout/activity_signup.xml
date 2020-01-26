@@ -5,62 +5,68 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg"></ImageView>
     <EditText
         android:id="@+id/username"
         android:layout_width="275dp"
         android:layout_height="76dp"
-        android:layout_marginTop="68dp"
-        android:backgroundTint="#FF0000"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/inputColour"
         android:hint="Email or username"
         android:inputType="numberDecimal"
         android:maxLength="20"
-        android:textColor="#FF0000"
-        android:textColorHint="#FF0000"
+        android:textColor="@color/inputColour"
+        android:textColorHint="@color/inputColour"
+        app:layout_constraintBottom_toTopOf="@+id/password"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></EditText>
+        app:layout_constraintStart_toStartOf="parent"></EditText>
 
     <EditText
         android:id="@+id/password"
         android:layout_width="275dp"
         android:layout_height="76dp"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="#FF0000"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/inputColour"
         android:hint="Password"
         android:inputType="textVisiblePassword"
         android:maxLength="15"
-        android:textColor="#FF0000"
-        android:textColorHint="#FF0000"
+        android:textColor="@color/inputColour"
+        android:textColorHint="@color/inputColour"
+        app:layout_constraintBottom_toTopOf="@+id/passwordConfirm"
         app:layout_constraintEnd_toEndOf="@+id/username"
-        app:layout_constraintStart_toStartOf="@+id/username"
-        app:layout_constraintTop_toBottomOf="@+id/username"></EditText>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/username"></EditText>
 
     <EditText
         android:id="@+id/passwordConfirm"
         android:layout_width="275dp"
         android:layout_height="76dp"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="#FF0000"
+        android:backgroundTint="@color/inputColour"
         android:hint="Confirm Password"
         android:inputType="textVisiblePassword"
         android:maxLength="15"
-        android:textColor="#FF0000"
-        android:textColorHint="#FF0000"
+        android:textColor="@color/inputColour"
+        android:textColorHint="@color/inputColour"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/password"
         app:layout_constraintStart_toStartOf="@+id/password"
-        app:layout_constraintTop_toBottomOf="@+id/password"></EditText>
+        app:layout_constraintTop_toTopOf="parent"></EditText>
 
     <EditText
         android:id="@+id/name"
         android:layout_width="275dp"
         android:layout_height="76dp"
         android:layout_marginTop="40dp"
-        android:backgroundTint="#FF0000"
+        android:backgroundTint="@color/inputColour"
         android:hint="Enter your name"
         android:inputType="textPersonName"
         android:maxLength="15"
-        android:textColor="#FF0000"
-        android:textColorHint="#FF0000"
+        android:textColor="@color/inputColour"
+        android:textColorHint="@color/inputColour"
         app:layout_constraintEnd_toEndOf="@+id/passwordConfirm"
         app:layout_constraintStart_toStartOf="@+id/passwordConfirm"
         app:layout_constraintTop_toBottomOf="@+id/passwordConfirm"></EditText>
@@ -70,7 +76,7 @@
         android:layout_width="198dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/shape"
         android:fontFamily="sans-serif"
         android:onClick="patient"
@@ -87,7 +93,7 @@
         android:layout_width="198dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/shape"
         android:fontFamily="sans-serif"
         android:onClick="doctor"

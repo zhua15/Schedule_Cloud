@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="buttonColour">#FF0000</color>
-    <color name="inputColour">#FF0000</color>
+    <color name="buttonColour">#FFDE59</color>
+    <color name="inputColour">#000000</color>
 </resources>

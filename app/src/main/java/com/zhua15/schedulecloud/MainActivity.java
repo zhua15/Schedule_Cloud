@@ -36,6 +36,25 @@ public class MainActivity extends Activity {
             }
         });
     }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        currentVideoPosition = mediaPlayer.getCurrentPosition();
+        videoView.pause();
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        videoView.start();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mediaPlayer.release();
+        mediaPlayer = null;
+    }
+
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         if (hasFocus) {
