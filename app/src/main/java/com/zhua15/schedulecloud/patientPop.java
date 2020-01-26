@@ -6,15 +6,6 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class patientPop extends Activity {
 
@@ -22,7 +13,6 @@ public class patientPop extends Activity {
     String password;
     String name;
     EditText codeView;
-    private FirebaseAuth myAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +33,6 @@ public class patientPop extends Activity {
         int height = dm.heightPixels;
 
         getWindow().setLayout((int) (0.75 * width), (int) (0.25 * height));
-
-        myAuth = FirebaseAuth.getInstance();
     }
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
@@ -62,21 +50,5 @@ public class patientPop extends Activity {
     }
     public void onConfirm(View view) {
         String docCode = codeView.toString();
-        myAuth.createUserWithEmailAndPassword(username, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    FirebaseUser user = myAuth.getCurrentUser();
-                    if (user != null) {
-                        Toast.makeText(patientPop.this, "User Created.",
-                                Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(patientPop.this, LoginActivity.class));
-                    }
-                }
-                else
-                    Toast.makeText(patientPop.this, "Authentication failed.",
-                            Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 }

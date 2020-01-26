@@ -39,7 +39,10 @@ public class MainActivity extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
-        currentVideoPosition = mediaPlayer.getCurrentPosition();
+        try{
+            currentVideoPosition = mediaPlayer.getCurrentPosition();
+        }
+        catch (Exception e) {}
         videoView.pause();
     }
     @Override

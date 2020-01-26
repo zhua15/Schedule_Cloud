@@ -6,15 +6,6 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class doctorPop extends Activity {
 
@@ -22,7 +13,6 @@ public class doctorPop extends Activity {
     String username;
     String password;
     String name;
-    private FirebaseAuth myAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +35,6 @@ public class doctorPop extends Activity {
         codeView = findViewById(R.id.codeView);
         int i = (int) (Math.random() * 999999 + 100000);
         codeView.setText("Doctor Code:\n" + i);
-
-        myAuth = FirebaseAuth.getInstance();
     }
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
@@ -63,21 +51,6 @@ public class doctorPop extends Activity {
                         | View.SYSTEM_UI_FLAG_FULLSCREEN);
     }
     public void onConfirm(View view) {
-        myAuth.createUserWithEmailAndPassword(username, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    FirebaseUser user = myAuth.getCurrentUser();
-                    if (user != null) {
-                        Toast.makeText(doctorPop.this, "User Created.",
-                                Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(doctorPop.this, LoginActivity.class));
-                    }
-                }
-                else
-                    Toast.makeText(doctorPop.this, "Authentication failed.",
-                            Toast.LENGTH_SHORT).show();
-            }
-        });
+
     }
 }
